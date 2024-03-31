@@ -1,5 +1,6 @@
-//Importing useState hook from react
+//Imported files and component
 import { useState } from "react";
+import TodoItem from "./TodoItem";
 
 //Creating and Exporting the Todo Component
 export default function Todo() {
@@ -28,6 +29,11 @@ export default function Todo() {
           type="text"
         />
         <button type="submit">Add</button>
+
+        {/* Displaying Todos Item */}
+        {todos.map((item) => (
+          <TodoItem key={item} item={item} />
+        ))}
       </form>
     </div>
   );
