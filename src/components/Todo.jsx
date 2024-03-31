@@ -7,11 +7,21 @@ export default function Todo() {
   //Creating a state variable making the component controlled by react
   const [todo, setTodo] = useState("");
 
+  //State that saves submitted value inputed by user
+  const [todos, setTodos] = useState([]);
+
+  //Submit button Functionality
+  function handleSubmit(event) {
+    event.preventDefault();
+    setTodos([...todos, todo]);
+    setTodo("");
+  }
+
   //Returning the form and input to the Todo Component
   return (
     <div>
-      <form>
-        {/* Using the setTodo funct to set the value of the input to the todo state variable to be = event.target.value when the user trys to change the value of the input */}
+      <form onSubmit={handleSubmit}>
+        {/* Setting input value to todo state with setTodo function on user input change. */}
         <input
           onChange={(event) => setTodo(event.target.value)}
           value={todo}
