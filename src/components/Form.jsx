@@ -1,4 +1,6 @@
+//Imported component, modules etc
 import { useState } from "react";
+import styles from "./form.module.css";
 
 export default function Form({ todos, setTodos }) {
   //Creating a state variable making the component controlled by react
@@ -12,14 +14,20 @@ export default function Form({ todos, setTodos }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      {/* Setting input value to todo state with setTodo function on user input change. */}
-      <input
-        onChange={(event) => setTodo(event.target.value)}
-        value={todo}
-        type="text"
-      />
-      <button type="submit">Add</button>
+    <form className={styles.todoform} onSubmit={handleSubmit}>
+      <div className={styles.inputContainer}>
+        {/* Setting input value to todo state with setTodo function on user input change. */}
+        <input
+          className={styles.modernInput}
+          onChange={(event) => setTodo(event.target.value)}
+          value={todo}
+          type="text"
+          placeholder="Enter todo item..."
+        />
+        <button className={styles.modernButton} type="submit">
+          Add
+        </button>
+      </div>
     </form>
   );
 }
