@@ -15,7 +15,7 @@ export default function Todo() {
       <Form todos={todos} setTodos={setTodos} />
 
       {/* Displaying Todo Item Through TodoList Component */}
-      <TodoList todos={todos} />
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 }
