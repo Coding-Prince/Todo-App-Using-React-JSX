@@ -6,7 +6,7 @@ export default function TodoList({ todos, setTodos }) {
     <div className={style.list}>
       {/* Displaying Each Todo Item */}
       {todos.map((item) => (
-        <TodoItem key={item} item={item} todos={todos} setTodos={setTodos} />
+        <TodoItem key={item.name} item={item} todos={todos} setTodos={setTodos} />
       ))}
     </div>
   );

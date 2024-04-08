@@ -5,12 +5,13 @@ export default function TodoItem({ item, todos, setTodos }) {
   //"Utilizing state variable 'todos' and 'setTodos' function to delete items based on a condition."
   function handleDelete(item) {
     setTodos(todos.filter((todo) => todo !== item));
+    console.log(item)
   }
 
   return (
     <div className={styles.item}>
       <div className={styles.itemName}>
-        {item}
+        {item.name}
         <span>
           <button
             onClick={() => handleDelete(item)}

@@ -4,13 +4,14 @@ import styles from "./form.module.css";
 
 export default function Form({ todos, setTodos }) {
   //Creating a state variable making the component controlled by react
-  const [todo, setTodo] = useState("");
+  //const [todo, setTodo] = useState("");
+  const [todo, setTodo] = useState({ name: "", done: false });
 
   //Submit button Functionality
   function handleSubmit(event) {
     event.preventDefault();
     setTodos([...todos, todo]);
-    setTodo("");
+    setTodo({ name: "", done: false });
   }
 
   return (
@@ -19,8 +20,10 @@ export default function Form({ todos, setTodos }) {
         {/* Setting input value to todo state with setTodo function on user input change. */}
         <input
           className={styles.modernInput}
-          onChange={(event) => setTodo(event.target.value)}
-          value={todo}
+          onChange={(event) =>
+            setTodo({ name: event.target.value, done: false })
+          }
+          value={todo.name}
           type="text"
           placeholder="Enter todo item..."
         />
