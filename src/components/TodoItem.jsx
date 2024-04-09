@@ -16,6 +16,7 @@ export default function TodoItem({ item, todos, setTodos }) {
     );
   }
 
+  //Crossing the item base on if it is done
   const dashedLine = item.done ? styles.completed : "";
 
   return (
